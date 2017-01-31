@@ -1,0 +1,12 @@
+<section>
+  <h1>Todo <small>{{todoItems | completeLength}}/{{todoItems.length}}</small></h1>
+  <ul>
+    <li *ngFor="let task of todoItems">
+      <div style="display:inline-block">
+        <div *ngIf="!task.done">{{task.content}}</div>
+        <del *ngIf="task.done">{{task.content}}</del>
+      </div>
+      <input type="checkbox" (change)="onChange(task)" [checked]="task.done">
+    </li>
+  </ul>
+</section>

@@ -1,0 +1,4 @@
+<form (submit)="onSubmit(todoForm.value, todoForm.valid)" [formGroup]="todoForm" novalidate>
+  <input type="text" formControlName="content">
+  <input type="submit" [disabled]="todoForm.invalid">
+</form>
